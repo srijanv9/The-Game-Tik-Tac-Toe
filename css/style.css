@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #131419;
+}
+
+#container {
+    height: auto;
+    width: auto;
+    background: linear-gradient(to bottom, #2b2d47 10%, #181926);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: inset 1px 2px 0px rgb(255 255 255 / 18%), inset -2px -2px 2px rgb(0 0 0 / 65%);
+}
+
+#startingPage {
+    height: 330px;
+    width: 380px;
+}
+
+#startingPage h2,
+#winner h2 {
+    font-size: 50px;
+    color: #cdcfdb;
+    align-self: center;
+}
+
+#startingPage #line {
+    height: 1px;
+    width: 100%;
+    background: #c3cfdb;
+    margin: 20px 0;
+}
+
+#startingPage h4 {
+    font-size: 25px;
+    color: #b9b9c5;
+}
+
+#startingPage #button {
+    height: auto;
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    
+    /* justify-content: space-evenly;
+    align-items: center;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+
+    /* width: 150px; */
+    /* padding: 12px; */
+    /*border-radius: 20px;
+    color: white;
+    border: 3px solid #284cff;
+    cursor: pointer;
+    background: transparent;
+    background-image: url('liquid.png');
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease; */
+}
+
+#button button {
+    height: 55px;
+    width: 180px;
+    cursor: pointer;
+    background: #29cde0;
+    border: none;
+    outline: none;
+    color: #2b2d47;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    transform: scale(1);
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%), -2px -2px 5px rgb(0 0 0 / 87%);
+    transition: 0.5s;
+
+    justify-content: space-evenly;
+    align-items: center;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+
+    /* width: 150px; */
+    /* padding: 12px; */
+    border-radius: 20px;
+    color: white;
+    border: 3px solid #284cff;
+    cursor: pointer;
+    background: transparent;
+    background-image: url('liquid.png');
+    background-repeat: repeat-x;
+    background-position: 0 -100%;
+    transition: 1.5s ease;
+}
+#startingPage #button button:hover,
+#winner #button button:hover{
+    background-position: center;
+  }
+  
+  /* button:nth-child(1){
+    filter: hue-rotate(0deg);
+  }
+  
+  button:nth-child(2){
+    filter: hue-rotate(40deg);
+  } */
+
+#button button:first-child {
+    margin-right: 40px;
+}
+
+#startingPage #button button:hover,
+#winner #button button:hover {
+    transform: scale(0.90);
+}
+
+#winner {
+    display: none;
+}
+
+#winner #button {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#winner #button button {
+    margin-top: 20px;
+}
+
+#mainPage {
+    height: 550px;
+    width: 350px;
+    padding: 20px;
+    position: relative;
+    display: none;
+}
+
+#mainPage #headerBtns {
+    height: 60px;
+    width: 310px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%), -2px -2px 5px rgb(0 0 0 / 87%);
+}
+
+#mainPage #headerBtns button {
+    height: 60px;
+    width: 160px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.60);
+}
+
+#mainPage #headerBtns #O_Turn {
+    left: 160px;
+    z-index: 3;
+}
+
+#showChange {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 160px;
+    border-radius: 50px;
+    background: #29cde0;
+    z-index: 1;
+    transition: 0.2s;
+}
+
+#gameBoard {
+    height: 400px;
+    width: 330px;
+    position: absolute;
+    top: 150px;
+    left: 10px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 15px;
+}
+
+.boxes {
+    height: 100px;
+    width: 100px;
+    box-shadow: 2px 2px 2px rgb(255 255 255 / 26%), -2px -2px 5px rgb(0 0 0 / 87%);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.boxes i {
+    font-size: 60px;
+    color: #29cde0;
+}
+
+.toggle{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.toggle::before{
+    content: '\f186';
+    font-family: fontAwesome;
+    color: #004142;
+    width: 50%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+}
+section.dark .toggle:before{
+    content:'\f185'
+}
+@media(max-width: 500px){
+    .card{
+        flex-direction: column;
+        align-items: center;
+    }
+    .user-form{
+        max-width: 400px;
+    }
+}
+
+section{
+    position: relative;
+    background:  #06BDC1;
+    background: -webkit-radial-gradient(center, #06BDC1, #68469F);
+    background: -moz-radial-gradient(center, #06BDC1, #68469F);
+    background: radial-gradient(ellipse at center, #06BDC1, #68469F);
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+section.dark {
+    background: #131419;;
+}
+.fa-moon{
+    color: #f1c40f;
+}
+.fa-sun{
+    color: #f39c12;
+}
+
+$primary: #11998e;
+$secondary: #38ef7d;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid $gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}

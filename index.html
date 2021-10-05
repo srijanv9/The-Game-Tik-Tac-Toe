@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+<body>
+
+    <!-- Dark Mode Toggle -->
+
+
+    <!-- <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label> -->
+    <section class="sec">
+    <div class="toggle">
+    </div>
+    <div id="container">
+
+
+        <!-- Starting Page -->
+        <div id="startingPage">
+            <h2>Tic-Tac-Toe</h2>
+            <div id="line"></div>
+            <div class="form__group field">
+                <h4>Name(Player X):</h4>
+                <input type="input" class="form__field" placeholder="Player X's name here..." name="name" id='name'/>
+                <label for="name" class="form__label"></label>
+                <h4>Name(Player O):</h4>
+                <input type="input" class="form__field" placeholder="Player O's name here..." name="name" id='name'/>
+                <label for="name" class="form__label"></label>
+              </div>
+            <h4>Select which player plays first:</h4>
+            <div id="button">
+                <button id="playerX" class="choose">Player ( X )</button>
+                <button id="playerO" class="choose">Player ( O )</button>
+            </div>
+            
+        </div>
+
+
+
+        <!-- Main Page -->
+        <div id="mainPage">
+            <div id="headerBtns">
+                <button id="">X Turn</button>
+                <button id="O_Turn">O Turn</button>
+                <div id="showChange"></div>
+            </div>
+            <div id="gameBoard">
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+                <div class="boxes"></div>
+            </div>
+        </div>
+
+
+
+        <!-- WInner Page -->
+        <div id="winner">
+            <h2 id="winnerName">Player X Win The Game!</h2>
+            <div id="button">
+                <button id="quit">Play Again</button>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+        <script>
+            const sec=document.querySelector('.sec');
+            const toggle=document.querySelector('.toggle');
+            toggle.onclick=function(){
+                sec.classList.toggle('dark');
+            }
+        </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
